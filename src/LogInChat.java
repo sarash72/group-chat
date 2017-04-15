@@ -18,7 +18,7 @@ public class LogInChat extends HttpServlet {
      */
     public LogInChat() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
