@@ -57,7 +57,7 @@ div.border {
 		<p>
 
 			<%
-				BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Karimi\\Desktop\\viratech\\workspaceNew\\ChatSara\\chat.txt"));
+				BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Karimi\\Desktop\\viratech\\workspaceNew\\ChatServletFinal\\chat.txt"));
 				//BufferedReader br = new InputStreamReader(new FileInputStream(txtFilePath));
 				StringBuilder sb = new StringBuilder();
 				String line;
