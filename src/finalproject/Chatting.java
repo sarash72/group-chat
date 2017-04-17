@@ -25,7 +25,7 @@ public class Chatting extends HttpServlet {
 	 */
 	public Chatting() {
 		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 	
 	ChooseChat cc = new ChooseChat();
