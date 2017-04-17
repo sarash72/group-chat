@@ -43,12 +43,28 @@ div.border {
 		<p>
 
 		
-			
-			
+		<%	
+		writer_function(input_value);
+		%>	
 
 		</p>
 
 	</div>
+	<%!public void writer_function(String input_massage) {
+		String str = input_massage;
+		//always give the path from root. This way it almost always works.
+		String nameOfTextFile = "C:/Users/MEHR/Desktop/chat.txt";
+		try {
+			PrintWriter pw = new PrintWriter(new FileOutputStream(nameOfTextFile, true));
+			if (str != null)
+
+				pw.println(str);
+			//clean up
+			pw.close();
+		} catch (IOException e) {
+		}
+	}
+	%>
 
 
 	<script>
