@@ -1,4 +1,4 @@
-
+package finalproject;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +18,6 @@ public class LogInChat extends HttpServlet {
      */
     public LogInChat() {
         super();
-        
     }
 
 	/**

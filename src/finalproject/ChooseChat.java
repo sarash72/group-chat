@@ -1,3 +1,4 @@
+package finalproject;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -59,16 +60,16 @@ public class ChooseChat extends HttpServlet {
 		response.setIntHeader("Refresh", 5);
 		HttpSession s = request.getSession();
 		session.add(num, s);
-		
+		// session.add(num, request.getSession());
+
 		user = request.getParameter("user");
 		pass = request.getParameter("pass");
 		if (session.get(num).isNew()) {
 			System.out.println("IS new");
-			
 
 			session.get(num).setAttribute("chat", false);
 		}
-		
+
 		for (int i = 0; i < 7; i++) {
 			users.add(i + "");
 			use.put(i + "", i + "");
@@ -78,7 +79,7 @@ public class ChooseChat extends HttpServlet {
 			if (use.get(user).equals(pass)) {
 				if (!onlines.contains(user))
 					onlines.add(user);
-				
+
 				session.get(num).setAttribute("username", user);
 				session.get(num).setAttribute("password", pass);
 				request.setAttribute("session", session);
@@ -87,7 +88,7 @@ public class ChooseChat extends HttpServlet {
 				log += "<html><body><form  action='Chatting'>"
 						+ "<select name='ChatPartner' id='ChatPartner' multiple>";
 				for (int i = 0; i < onlines.size(); i++) {
-if(session.get(i).getAttribute("chat").equals(false))
+
 					log += "<option name ='" + onlines.get(i) + "'value= '" + onlines.get(i) + "'id='option'>"
 							+ onlines.get(i) + "</option>";
 				}
@@ -115,7 +116,7 @@ if(session.get(i).getAttribute("chat").equals(false))
 			System.out.println("not EXIST");
 		}
 		if (s.getAttribute("chat").equals(true)) {
-			request.getRequestDispatcher("Tst1.jsp").forward(request, response);
+			request.getRequestDispatcher("Tst.jsp").forward(request, response);
 		}
 
 	}

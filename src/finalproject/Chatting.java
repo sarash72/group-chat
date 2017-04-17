@@ -1,3 +1,4 @@
+package finalproject;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
@@ -24,9 +25,9 @@ public class Chatting extends HttpServlet {
 	 */
 	public Chatting() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
-
+	
 	ChooseChat cc = new ChooseChat();
 
 	/**
@@ -35,10 +36,17 @@ public class Chatting extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// response.getWriter().write("User chose: " +
+		
+		response.setIntHeader("Refresh", 5);
 
 		String[] assignedResources = request.getParameterValues("ChatPartner");
-		
-		request.getRequestDispatcher("Tst1.jsp").forward(request, response);
+		String l = assignedResources.length + "";
+		response.getWriter().write(l);
+		String b = cc.session.size() + "";
+		response.getWriter().write(b);
+		request.getRequestDispatcher("Tst.jsp").forward(request, response);
 
 		for (int i = 0; i < assignedResources.length; i++) {
 			for (int j = 0; j < cc.session.size(); j++) {
@@ -54,7 +62,17 @@ public class Chatting extends HttpServlet {
 		}
 		
 		
-	
+		// for (int i = 0; i < assignedResources.length; i++) {
+		// if (assignedResources[i].equals(request.getParameter("user"))) {
+		// response.getWriter().write("User chose: " );
+		// /// assignedResources[i]);
+		// //System.out.println("fdg");
+		//
+		// /// chooes_onlineList.add(user);
+		// // String l= chooes_onlineList.size()+"";
+		// // response.getWriter().write(l);
+		// }
+		// }
 	}
 
 	/**
